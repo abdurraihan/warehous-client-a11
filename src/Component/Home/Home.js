@@ -1,9 +1,15 @@
 import React from 'react';
+import Banar from './Banar/Banar';
+import Products from './Products/Products';
+
+
 
 const Home = () => {
     return (
         <div>
-            <h1> this is home</h1>
+            <Banar></Banar>
+            <Products></Products>
+           
         </div>
     );
 };
