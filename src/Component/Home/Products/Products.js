@@ -1,12 +1,21 @@
 import React from 'react';
 import useProducts from '../../../hooks/useProducts';
-
+import Product from '../Product/Product';
+import './Products.css'
 const Products = () => {
-    const [products, setProducts] = useProducts();
-    console.log(products);
+    const [products] = useProducts();
+   
     return (
-        <div>
-            this is products
+        <div className='products-container'>
+         
+            {
+                products.slice(0 ,6).map(p=> <Product 
+                    key={p._id}
+                    p={p}>
+
+                    </Product> )
+            }
+            
         </div>
     );
 };

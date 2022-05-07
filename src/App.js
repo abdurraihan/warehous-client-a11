@@ -10,6 +10,7 @@ import Inventory from './Component/Inventory/Inventory';
 import Login from './Component/Login/Login/Login'
 import Register from './Component/Login/Register/Register'
 import Notfound from './Component/Notfound/Notfound';
+import Update from './Component/Update/Update';
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/inventory' element={<Inventory></Inventory>}></Route>
 
-
+        <Route path='products/:id' element={<Update></Update>}></Route>
 
 
 
