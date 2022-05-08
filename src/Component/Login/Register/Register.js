@@ -5,7 +5,7 @@ import './Register.css';
 import auth from '../../../firebase-init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import Loading from '../Loading/Loading';
-import { toast } from 'react-toastify';
+
 import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
@@ -17,7 +17,7 @@ const Register = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
    
-    const [useUpdateProfile, updating, updateError] = useUpdateProfile(auth);
+    // const [useUpdateProfile, updating, updateError] = useUpdateProfile(auth);
 
     const navigate = useNavigate();
 
@@ -25,11 +25,9 @@ const Register = () => {
         navigate('/login');
     }
 
-    if(error){
-        return toast(error.message);
-    }
+   
 
-    if(loading || updating ){
+    if(loading  ){
         return <Loading></Loading>
     }
 

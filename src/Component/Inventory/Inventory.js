@@ -1,5 +1,6 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import useProducts from '../../hooks/useProducts';
 import './Inventory.css'
 
@@ -36,9 +37,14 @@ const Inventory = () => {
 
 
 
+
     return (
-        <div>
-            <h1> this is Inventory</h1>
+        
+        <div className='addItem-btn'>
+
+        <Link  to="/addItem"> <button className='addItem-btn'>Add items </button></Link>
+
+            <h3 className='inventory-title'> This is Manage Inventory</h3>
 
             <Table striped bordered hover variant="dark">
                 <thead>

@@ -31,9 +31,8 @@ const Header = () => {
                         </Nav>
                         <Nav>
 
-                            <Nav.Link as={Link} to="/inventory"> Manage Inventory</Nav.Link>
                             <Nav.Link as={Link} to="/about">About</Nav.Link>
-                          
+                            <Nav.Link as={Link} to="/blog">Blog</Nav.Link>
                           {/* 
                           
                           
@@ -49,11 +48,28 @@ const Header = () => {
 
                               {
                                 user ?
-                                    <button className='btn btn-link text-white text-decoration-none' onClick={handleSignOut}>sign out</button>
+                                <>
+                                
+                            <Nav.Link as={Link} to="/inventory"> Manage Inventory</Nav.Link>
+                                    <Nav.Link as={Link} to="/addItem">
+                                    AddItem
+                                </Nav.Link>
+
+                                <Nav.Link as={Link} to="/myItem">
+                                    MYItem
+                                </Nav.Link>
+
+
+                                    <button className='btn btn-link text-white text-decoration-none' onClick={handleSignOut}>sign out</button>  
+
+                                </>
+
                                 :
                                 <Nav.Link as={Link} to="login">
                                 Login
-                            </Nav.Link>}
+                            </Nav.Link>
+                            
+                            }
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

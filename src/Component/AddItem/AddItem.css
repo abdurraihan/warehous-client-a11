@@ -1,0 +1,17 @@
+.add-main{
+    display: flex;
+    justify-content: center;
+   align-items: center;
+   margin-top: 30px;
+  
+}
+
+
+
+.add-container{
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    height: 500px;
+    background-color: rgb(51, 48, 48);
+}

@@ -1,0 +1,8 @@
+.my-item-title{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    background-color: black;
+    color: aliceblue;
+    border-radius: 50%;
+}
