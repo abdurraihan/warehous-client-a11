@@ -24,7 +24,7 @@ const Update = () => {
 
 
 
-    const handledeliver = () =>{
+    const handleDeliver = () =>{
 
         if(quantity == 0){
             return toast(" you can't deliver more ")
@@ -121,7 +121,7 @@ const Update = () => {
                     <h5> supplier name : {supplier_name} </h5>
                     <h5> {description}</h5>
 
-                    <button onClick={handledeliver}> deliver </button> 
+                    <button onClick={handleDeliver}> deliver </button> 
 
                     <form onSubmit={handaleAdd}>
                         <input type="number" name="number" 

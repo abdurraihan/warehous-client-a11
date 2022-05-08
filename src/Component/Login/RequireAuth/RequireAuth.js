@@ -9,8 +9,12 @@ const RequireAuth = ({ children }) => {
     const [user, loading] = useAuthState(auth);
     const location = useLocation();
     const [sendEmailVerification, sending, error] = useSendEmailVerification(auth);
-    if (loading) {
+    if (loading || sending) {
         return <Loading></Loading>
+    }
+
+    if(error){
+        toast(error.message);
     }
 
     if (!user) {
@@ -31,6 +35,7 @@ const RequireAuth = ({ children }) => {
                 Send Verification Email Again
             </button>
           
+          <ToastContainer></ToastContainer>
         </div>
     }
 

@@ -8,7 +8,7 @@ import auth from '../../firebase-init'
 const Header = () => {
 
     const [user] = useAuthState(auth);
-    const userName = (user?.displayName);
+    // const userName = (user?.displayName);
 
     const handleSignOut = () =>{
         signOut(auth);
@@ -31,8 +31,8 @@ const Header = () => {
                         </Nav>
                         <Nav>
 
-                            <Nav.Link as={Link} to="inventory">Inventory</Nav.Link>
-                            <Nav.Link as={Link} to="about">About</Nav.Link>
+                            <Nav.Link as={Link} to="/inventory"> Manage Inventory</Nav.Link>
+                            <Nav.Link as={Link} to="/about">About</Nav.Link>
                           
                           {/* 
                           
