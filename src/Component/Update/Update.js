@@ -10,7 +10,7 @@ const Update = () => {
     const { _id, name, img, description, price, quantity, supplier_name
     } = product;
 
-    console.log(_id);
+    // console.log(_id);
 
 
     useEffect(() => {
@@ -21,6 +21,23 @@ const Update = () => {
     }, [])
 
 
+    const handledeliver = () =>{
+
+        const newQuentity = parseInt(quantity) -1;
+        const newDAta = {
+            _id : _id,
+            name: name,
+            img: img,
+            description: description,
+            price: price,
+            supplier_name: supplier_name,
+            quantity : newQuentity
+
+        }
+
+        console.log(newDAta);
+
+    }
 
 
 
@@ -44,7 +61,7 @@ const Update = () => {
                     <h5> supplier name : {supplier_name} </h5>
                     <h5> {description}</h5>
 
-                    <button> deliver </button> 
+                    <button onClick={handledeliver}> deliver </button> 
 
                     <form>
                         <input type="number" name="" id="" />
