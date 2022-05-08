@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 import './Update.css'
 const Update = () => {
 
@@ -18,13 +19,20 @@ const Update = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data))
-    }, [])
+    }, [product])
+
+
 
 
     const handledeliver = () =>{
 
+        if(quantity == 0){
+            return toast(" you can't deliver more ")
+        }
+
         const newQuentity = parseInt(quantity) -1;
-        const newDAta = {
+
+        const newData = {
             _id : _id,
             name: name,
             img: img,
@@ -34,11 +42,63 @@ const Update = () => {
             quantity : newQuentity
 
         }
+   //console.log(newData);
+        const url = `http://localhost:5000/products/${productId}`
+        fetch(url , {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newData)
+        })
+        .then(res=> res.json())
+        // .then(data => console.log(data))
+       
 
-        console.log(newDAta);
+
+     
 
     }
 
+
+    const handaleAdd =(event)=>{
+        event.preventDefault();
+        const number = event.target.number.value;
+        if(number < 1){
+            return toast('please add quantity');
+        }
+
+        const newQuentity = parseInt(quantity)  + parseInt(number) ;
+        
+        const newData = {
+            _id : _id,
+            name: name,
+            img: img,
+            description: description,
+            price: price,
+            supplier_name: supplier_name,
+            quantity : newQuentity
+
+        }
+   //console.log(newData);
+        const url = `http://localhost:5000/products/${productId}`
+        fetch(url , {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newData)
+        })
+        .then(res=> res.json())
+        // .then(data => console.log(data))
+      
+        event.target.reset();
+
+
+
+      
+
+    }
 
 
 
@@ -63,13 +123,15 @@ const Update = () => {
 
                     <button onClick={handledeliver}> deliver </button> 
 
-                    <form>
-                        <input type="number" name="" id="" />
+                    <form onSubmit={handaleAdd}>
+                        <input type="number" name="number" 
+                        placeholder='restock the items' id="" />
+
                         <input type="submit" value="add" />
                     </form>
                 </div>
               
-             
+                <ToastContainer></ToastContainer>
 
             </div>
 

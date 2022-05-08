@@ -16,10 +16,11 @@ const Header = () => {
     return (
         <div>
 
-<Navbar collapseOnSelect expand="lg" sticky='top' bg="primary" variant="dark">
+<Navbar collapseOnSelect expand="lg"  sticky='top' bg="dark" variant="dark">
                 <Container>
                     <Navbar.Brand >
-                       <h1>book</h1>
+                 
+                       <h3>Book-Hous</h3>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
@@ -32,10 +33,20 @@ const Header = () => {
 
                             <Nav.Link as={Link} to="inventory">Inventory</Nav.Link>
                             <Nav.Link as={Link} to="about">About</Nav.Link>
-                            {
+                          
+                          {/* 
+                          
+                          
+                             {
                                 user ? <p className='d-flex mx-4  align-items-center
                                 text-light'>{ userName }</p> : ''
                             }
+                          
+                          
+                          */}
+
+
+
                               {
                                 user ?
                                     <button className='btn btn-link text-white text-decoration-none' onClick={handleSignOut}>sign out</button>

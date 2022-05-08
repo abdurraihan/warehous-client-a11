@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { ToastContainer } from 'react-bootstrap';
+
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import About from './Component/About/About';
@@ -11,7 +11,7 @@ import Login from './Component/Login/Login/Login'
 import Register from './Component/Login/Register/Register'
 import Notfound from './Component/Notfound/Notfound';
 import Update from './Component/Update/Update';
-
+import RequireAuth from './Component/Login/RequireAuth/RequireAuth'
 function App() {
   return (
     <div>
@@ -26,7 +26,11 @@ function App() {
         <Route path='/inventory' element={<Inventory></Inventory>}></Route>
 
         <Route path='products/:productId'
-         element={<Update></Update>}>
+         element={
+           <RequireAuth> 
+         <Update></Update>
+         </RequireAuth>
+         }>
            
          </Route>
 
@@ -37,7 +41,7 @@ function App() {
 
 
       <Futter> </Futter>
-      <ToastContainer></ToastContainer>
+     
      
     </div>
  
