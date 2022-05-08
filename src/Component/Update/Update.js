@@ -15,7 +15,7 @@ const Update = () => {
 
 
     useEffect(() => {
-        const url = `http://localhost:5000/products/${productId}`
+        const url = `https://still-falls-61399.herokuapp.com/products/${productId}`
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data))
@@ -43,7 +43,7 @@ const Update = () => {
 
         }
    //console.log(newData);
-        const url = `http://localhost:5000/products/${productId}`
+        const url = `https://still-falls-61399.herokuapp.com/products/${productId}`
         fetch(url , {
             method: 'PUT',
             headers: {
@@ -81,7 +81,7 @@ const Update = () => {
 
         }
    //console.log(newData);
-        const url = `http://localhost:5000/products/${productId}`
+        const url = `https://still-falls-61399.herokuapp.com/products/${productId}`
         fetch(url , {
             method: 'PUT',
             headers: {

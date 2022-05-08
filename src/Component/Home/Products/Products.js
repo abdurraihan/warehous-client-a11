@@ -9,7 +9,7 @@ const Products = () => {
     return (
             <div> 
 
-           <h2> Inventory Items in down / Go Manage Inventory and see all <Link to="/inventory"> <button>Inventory</button></Link> </h2>
+           <h2 className='products-title'> Inventory Items </h2>
          
 
 
@@ -25,6 +25,8 @@ const Products = () => {
                     </Product> )
             }
             
+
+            <button  className='inv-btn'> <Link to="/inventory">Go manage Inventory </Link> </button>
         </div>
 
         </div>

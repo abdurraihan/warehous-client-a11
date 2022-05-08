@@ -9,11 +9,16 @@
     margin-left: 5px;
 }
 
+.addItem-btn{
+    margin-bottom: 150px;
+}
+
 .addItem-btn a{
     text-decoration: none;
     display: flex;
     justify-content: center;
     margin: 10px;
+    
 }
 
 .inventory-title{

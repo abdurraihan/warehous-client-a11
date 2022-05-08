@@ -22,7 +22,7 @@ const AddItem = () => {
             img: event.target.img.value
         }
 
-        axios.post('http://localhost:5000/addItem',addItem)
+        axios.post('https://still-falls-61399.herokuapp.com/addItem',addItem)
         .then(response =>{
            // console.log(response)
  
