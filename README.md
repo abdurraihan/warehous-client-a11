@@ -1,11 +1,9 @@
 ## livesite link : https://warehous-fc3a9.web.app/
 
-## name of my web site is : book shop
 
-## short description : this web site is warehous website here you can do add product and delete and see your stoke 
 
-- this is a information site
-- thare is delete btn 
-- there is update btn
-- there is stoke section
-- and chart feture 
+### Used Technologies : javascript(ES6), React.js,Tailwind ,Node.js , express.js ,mongodb ,jwt
+
+- This is a full stack website for Parts manufacturing companies , where they can show products and sell But customers can’t buy only one or two products. They have to order more than the minimum quantity and less than the available quantity .
+
+- This website does different behaviors for normal users and admin , users can purchase and give reviews and do many more things and an admin can manage all products and users and also can add new products .
